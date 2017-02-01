@@ -7,7 +7,7 @@ else
 	FMUL	st, st		; tan^2, 1, tan, x
 	FADDP	st(1), st	; 1+tan^2, tan, x
 	FSQRT			; (1+tan^2)^0.5, tan, x
-	FDIVR	st,st(1)	; sin, tan, x
+	FDIVR	st, st(1)	; sin, tan, x
 	FABS			; sin, tan, x
 	FLD1			; 1, sin, tan, x
 	FADD	st, st		; 2, sin, tan, x
