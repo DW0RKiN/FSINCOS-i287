@@ -41,7 +41,7 @@ void i287_fsincos( double radians, double *sine, double *cosine )
 "swap_sincos%=:\n"
         
 	"FDIV	%%st(2), %%st(0)\n"    // sin, 1, (1+tan^2)^0.5
-        "SAHF\n"                       // AH->Flag, CF = C0
+	"SAHF\n"                       // AH->Flag, CF = C0
 	"JNC	postive_sin%=\n"
 	"FCHS\n"                       // -sin, 1, (1+tan^2)^0.5
 "postive_sin%=:\n"
