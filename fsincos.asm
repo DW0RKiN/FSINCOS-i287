@@ -1,3 +1,5 @@
+; input st = rad, rad >= 0
+; output st = cos(rad), st(1) = sin(rad)
 SINCOS:
 	PUSH	AX                   ; 
 	FLD	[PiDiv4_80bit]       ; pi/4, x
