@@ -13,7 +13,8 @@ void i287_fsincos( double radians, double *sine, double *cosine )
 	"FPREM\n"                      // x mod pi/4, pi/4
 	"FSTSW\n"                      // FPU Status Word => AX
 	                               // Status Word:   B,  C3, top, top, top,  C2,  C1,  C0, ...
-	                               //        Flag:  SF,  ZF, res,  AF, res,  PF, res,  CF        
+	                               //        Flag:  SF,  ZF, res,  AF, res,  PF, res,  CF  
+	"WAIT\n"                       //
 	"MOV	%%ah, %%al\n"          //
 	"SAHF\n"                       // AH->Flag, ZF = C3
 	"JNZ	zero_c3%=\n"           //
