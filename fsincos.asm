@@ -5,10 +5,10 @@ SINCOS:
 	FLD	[PiDiv4_80bit]       ; pi/4, x
 	FXCH                         ; x, pi/4
 	FPREM                        ; x mod pi/4, pi/4
-	WAIT                         ;
 	FSTSW	AX                   ; FPU Status Word => AX
 	                             ; Status Word:   B,  C3, top, top, top,  C2,  C1,  C0, ...
 	                             ;        Flag:  SF,  ZF, res,  AF, res,  PF, res,  CF        
+	WAIT                         ;
 	MOV	AL, AH               ;
 	SAHF                         ; AH->Flag, ZF = C3
 	JNZ	zero_c3              ;
